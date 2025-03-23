@@ -12,29 +12,7 @@ struct CardProductView: View {
     
     var body: some View {
         HStack() {
-            
-            if let firstImageURL = product.images.first, let url = URL(string: firstImageURL) {
-                AsyncImage(url: url) { cases in
-                    switch cases {
-                    case .empty:
-                        ProgressView()
-                    case .success(let image):
-                        image
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 150, height: 150)
-                            .cornerRadius(10)
-                    case .failure:
-                        Image(systemName: "photo")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 150, height: 150)
-                            .cornerRadius(10)
-                    @unknown default:
-                        EmptyView()
-                    }
-                }
-            }
+            PhotoComponentView(product: product)
             
             Spacer()
             

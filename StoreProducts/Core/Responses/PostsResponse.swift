@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - PostsResponse
-struct PostsResponse: Decodable, Identifiable {
+struct PostsResponse: Decodable, Identifiable, Hashable {
     let id: Int
     let title: String
     let slug: String?

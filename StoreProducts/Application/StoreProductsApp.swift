@@ -12,7 +12,7 @@ struct StoreProductsApp: App {
 
     var body: some Scene {
         WindowGroup {
-            HomePageView()
+            RootView()
         }
     }
 }
